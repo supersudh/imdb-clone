@@ -6,6 +6,7 @@ import Providers from './Providers'
 import Navbar from '@/components/Navbar'
 import './globals.css'
 import Loading from './loading';
+import SearchBox from '@/components/SearchBox';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
           {/* Navbar */}
           <Navbar />
           {/* SearchBox  */}
+          <SearchBox />
           <Suspense fallback={<Loading />}>{children}</Suspense>
         </Providers>
       </body>
