@@ -1,9 +1,11 @@
+import { Suspense } from 'react';
 import Header from '@/components/Header'
-import './globals.css'
 import { Inter } from 'next/font/google'
 
 import Providers from './Providers'
 import Navbar from '@/components/Navbar'
+import './globals.css'
+import Loading from './loading';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,7 +24,7 @@ export default function RootLayout({ children }) {
           {/* Navbar */}
           <Navbar />
           {/* SearchBox  */}
-          {children}
+          <Suspense fallback={<Loading />}>{children}</Suspense>
         </Providers>
       </body>
     </html>
